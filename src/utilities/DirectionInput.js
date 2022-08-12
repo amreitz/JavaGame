@@ -43,3 +43,5 @@ class DirectionInput {
         return this.heldDirections[0];
     }
 }
+
+export default DirectionInput

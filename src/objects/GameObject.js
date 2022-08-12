@@ -1,8 +1,11 @@
-class GameObject {
+import Sprite from './Sprite.js'
+import { utils } from '../utilities/utils.js'
+
+export class GameObject {
 
     constructor(config) {
-        this.x = config.x || 0;
-        this.y = config.y || 0;
+        this.x = utils.withGrid(config.x) || 0;
+        this.y = utils.withGrid(config.y) || 0;
 
         this.direction = config.direction || "down";
 
@@ -16,6 +19,10 @@ class GameObject {
 
     update() {
 
+    }
+
+    mount() {
+        
     }
 
 }

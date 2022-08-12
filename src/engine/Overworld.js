@@ -1,3 +1,8 @@
+
+import DirectionInput from '../utilities/DirectionInput.js'
+import {OverworldMap} from '../maps/OverworldMap.js'
+import {MapList} from '../maps/MapList.js'
+
 class Overworld {
  constructor(config) {
    this.element = config.element;
@@ -11,12 +16,12 @@ class Overworld {
     // Clear the canvas
     this.ctx.clearRect(0,0,this.canvas.width,this.canvas.height)
 
-
     // Draw lower layer
     this.map.drawLowerImage(this.ctx);
 
     // Draw all game objects
     Object.values(this.map.gameObjects).forEach(object => {
+
       object.update({
         arrow: this.directionInput.direction
       })
@@ -40,10 +45,12 @@ class Overworld {
   this.directionInput = new DirectionInput();
   this.directionInput.init(); 
 
-  this.map = new OverworldMap(window.OverworldMaps.DemoRoom);
+  this.map = new OverworldMap(MapList.Kitchen);
   this.startGameLoop();
 
  }
 
 
 }
+
+export default Overworld

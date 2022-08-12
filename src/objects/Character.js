@@ -1,4 +1,6 @@
-class Character extends GameObject {
+import {GameObject} from './GameObject.js'
+
+export class Character extends GameObject {
     constructor(config) {
         super(config);
 
